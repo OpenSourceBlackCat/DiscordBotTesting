@@ -11,7 +11,9 @@ client.on("ready", () => {
 
 client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (!msg.author.bot) {
-    MainCanvas.fillStyle = "rgba(100,100,100,255)";
+    MainCanvas.fillStyle = "rgba(0,0,0,0)";
+    MainCanvas.strokeStyle = "rgba(255,255,255,255)";
+    MainCanvas.lineWidth = 10;
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
     MainCanvas.beginPath();
     MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI);
