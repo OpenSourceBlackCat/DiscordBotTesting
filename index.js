@@ -18,7 +18,7 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
       MainCanvas.drawImage(img,700,700,500,500);
     });
     //await MainCanvas.drawImage(UserAvatar,700,700,500,500);
-    const buffer = mainCanvas.create.toBuffer("image/png");
+    const buffer = mainCanvas.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
     await msg.channel.send({content:"Meow", files:[meow]});
   }
