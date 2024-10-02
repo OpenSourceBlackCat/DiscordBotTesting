@@ -6,7 +6,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
-client.on("message", async(msg)=>{
+client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (true) {
     await msg.channel.send("pong");
   }
