@@ -13,6 +13,7 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (!msg.author.bot) {
     MainCanvas.fillStyle = "rgba(100,100,100,255)";
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
+    MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, radius, 0, 2 * Math.PI);
     //console.log(msg.member.displayAvatarURL({format:"png"}));
     const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
     await MainCanvas.drawImage(UserAvatar,mainCanvas.width/2,mainCanvas.height/2,mainCanvas.width/2,mainCanvas.height/2);
