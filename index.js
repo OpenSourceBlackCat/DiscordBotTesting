@@ -17,8 +17,8 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
     MainCanvas.beginPath();
     MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI, true);
-    MainCanvas.stroke();
     MainCanvas.closePath();
+    MainCanvas.clip();
     //console.log(msg.member.displayAvatarURL({format:"png"}));
     const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
     await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
