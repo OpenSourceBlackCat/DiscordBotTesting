@@ -17,8 +17,8 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, 50, 0, 2 * Math.PI);
     MainCanvas.stroke();
     //console.log(msg.member.displayAvatarURL({format:"png"}));
-    const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
-    await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
+    //const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
+    //await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
     //await MainCanvas.drawImage(UserAvatar,700,700,500,500);
     const buffer = mainCanvas.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
