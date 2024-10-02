@@ -13,10 +13,12 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (!msg.author.bot) {
     MainCanvas.fillStyle = "rgba(100,100,100,255)";
     MainCanvas.fillRect(0,0,1920,1080);
-    console.log(msg.member.displayAvatarURL({format:"png"}));
-    const UserAvatar = await Canvas.loadImage(msg.member.displayAvatarURL({format:"png"}));
-    await MainCanvas.drawImage(UserAvatar,700,700,500,500);
-    const buffer = mainCanvas.create.toBuffer();
+    //console.log(msg.member.displayAvatarURL({format:"png"}));
+    const UserAvatar = await Canvas.loadImage(msg.member.displayAvatarURL({format:"png"})).then(img=>{
+      img.drawImage(UserAvatar,700,700,500,500);
+    });
+    //await MainCanvas.drawImage(UserAvatar,700,700,500,500);
+    const buffer = mainCanvas.create.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
     await msg.channel.send({content:"Meow", files:[meow]});
   }
