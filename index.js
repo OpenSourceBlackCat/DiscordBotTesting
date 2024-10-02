@@ -15,13 +15,14 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.strokeStyle = "rgba(255,255,255,255)";
     MainCanvas.lineWidth = 10;
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
+    MainCanvas.fillText("Welcome", mainCanvas.width/2, mainCanvas.height/2);
     MainCanvas.beginPath();
     MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI, true);
-    MainCanvas.closePath();
-    MainCanvas.clip();
+    MainCanvas.stroke();
+    MainCanvas.fill();
     //console.log(msg.member.displayAvatarURL({format:"png"}));
-    const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
-    await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
+    //const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
+    //await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
     const buffer = mainCanvas.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
     await msg.channel.send({content:"Meow", files:[meow]});
