@@ -8,7 +8,7 @@ client.on("ready", () => {
 })
 
 client.on(Discord.Events.MessageCreate, async(msg)=>{
-  if (!msg.user.bot) {
+  if (!msg.author.bot) {
     await msg.channel.send("pong");
   }
 })
