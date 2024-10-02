@@ -14,6 +14,7 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.fillStyle = "rgba(0,0,0,0)";
     MainCanvas.strokeStyle = "rgba(255,255,255,255)";
     MainCanvas.lineWidth = 10;
+    MainCanvas.textStyle = "rgba(255,255,255,255)";
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
     MainCanvas.fillText("Welcome", mainCanvas.width/2, mainCanvas.height/2);
     MainCanvas.beginPath();
