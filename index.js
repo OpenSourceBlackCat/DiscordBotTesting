@@ -11,7 +11,7 @@ client.on("ready", () => {
 
 client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (!msg.author.bot) {
-    MainCanvas.fillStyle = "rgba(0,0,0,0)";
+    MainCanvas.fillStyle = "rgba(100,100,100,255)";
     MainCanvas.fillRect(0,0,1920,1080);
     const UserAvatar = new Canvas.Image();
     UserAvatar.src = msg.author.avatarURL({dynamic:true, format:"png"});
