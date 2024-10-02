@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const Canvas = require("canvas");
 const mainCanvas = Canvas.createCanvas(1920, 1080);
-const MainCanvas.getContext("2d");
+const MainCanvas = mainCanvas.getContext("2d");
 require("dotenv").config();
 const client = new Discord.Client({intents:Object.keys(Discord.GatewayIntentBits)});
 
