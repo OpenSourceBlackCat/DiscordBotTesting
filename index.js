@@ -18,10 +18,10 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.beginPath();
     MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI);
     MainCanvas.stroke();
+    MainCanvas.closePath();
     //console.log(msg.member.displayAvatarURL({format:"png"}));
-    //const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
-    //await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
-    //await MainCanvas.drawImage(UserAvatar,700,700,500,500);
+    const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({extension:"png"}));
+    await MainCanvas.drawImage(0,0,mainCanvas.width/2,mainCanvas.height/2);
     const buffer = mainCanvas.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
     await msg.channel.send({content:"Meow", files:[meow]});
