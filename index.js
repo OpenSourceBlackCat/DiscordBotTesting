@@ -14,7 +14,8 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.fillStyle = "rgba(0,0,0,0)";
     MainCanvas.fillRect(0,0,1920,1080);
     const UserAvatar = new Canvas.Image();
-    UserAvatar.src = msg.author.user.avatarURL();
+    UserAvatar.src = msg.author.avatarURL();
+    console.log(UserAvatar.src);
     UserAvatar.onload = async() => {
       MainCanvas.drawImage(UserAvatar,700,700,500,500);
     };
