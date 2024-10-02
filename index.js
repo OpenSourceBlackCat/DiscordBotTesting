@@ -13,7 +13,7 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
   if (!msg.author.bot) {
     MainCanvas.fillStyle = "rgba(100,100,100,255)";
     MainCanvas.fillRect(0,0,1920,1080);
-    const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({dynamic:true, format:"png"}));
+    const UserAvatar = await Canvas.loadImage(msg.author.displayAvatarURL({format:"png"}));
     await MainCanvas.drawImage(UserAvatar,700,700,500,500);
     const buffer = mainCanvas.toBuffer("image/png");
     const meow = new Discord.AttachmentBuilder(buffer, {name:"meow.png"});
