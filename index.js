@@ -16,7 +16,7 @@ client.on(Discord.Events.MessageCreate, async(msg)=>{
     MainCanvas.lineWidth = 10;
     MainCanvas.fillRect(0,0,mainCanvas.width,mainCanvas.height);
     MainCanvas.beginPath();
-    MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI);
+    MainCanvas.arc(mainCanvas.width / 2, mainCanvas.height / 2, mainCanvas.height/3, 0, 2 * Math.PI, true);
     MainCanvas.stroke();
     MainCanvas.closePath();
     //console.log(msg.member.displayAvatarURL({format:"png"}));
