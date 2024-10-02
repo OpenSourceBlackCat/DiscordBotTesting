@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Canvas = require("canvas");
+const Canvas = require("@napi-rs/canvas");
 const mainCanvas = Canvas.createCanvas(1280, 720);
 const MainCanvas = mainCanvas.getContext("2d");
 require("dotenv").config();
